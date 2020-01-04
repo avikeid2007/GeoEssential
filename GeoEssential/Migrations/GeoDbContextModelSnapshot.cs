@@ -17,15 +17,14 @@ namespace GeoEssential.Migrations
 
             modelBuilder.Entity("GeoEssential.Models.City", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("stateId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("stateId")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -34,9 +33,8 @@ namespace GeoEssential.Migrations
 
             modelBuilder.Entity("GeoEssential.Models.Country", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
@@ -54,12 +52,11 @@ namespace GeoEssential.Migrations
 
             modelBuilder.Entity("GeoEssential.Models.State", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("CountryId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("CountryId")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");

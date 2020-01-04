@@ -1,4 +1,5 @@
 using GeoEssential.Models;
+using GeoEssential.SeedingService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -34,13 +35,13 @@ namespace GeoEssential
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, GeoDbContext context)
         {
             context.Database.Migrate();
+            _ = context.SeedAsync();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
             app.UseOpenApi();
             app.UseSwaggerUi3();

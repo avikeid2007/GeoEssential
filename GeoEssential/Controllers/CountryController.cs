@@ -1,6 +1,7 @@
 ﻿using GeoEssential.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace GeoEssential.Controllers
@@ -18,7 +19,7 @@ namespace GeoEssential.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Country>> GetCountries()
         {
-            return _context.Countries;
+            return _context.Countries.OrderBy(x=>x.Name).ToList();
         }
         [HttpPost]
         public async Task<ActionResult> SaveAutoNumberAsync(Country obj)
