@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GeoEssential.SeedingService;
+using Microsoft.EntityFrameworkCore;
 
 namespace GeoEssential.Models
 {
@@ -10,5 +11,15 @@ namespace GeoEssential.Models
         public GeoDbContext(DbContextOptions<GeoDbContext> options)
             : base(options)
         { }
-    }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //modelBuilder.Entity<Country>().HasData(SeedService.GetCountries());
+            //modelBuilder.Entity<State>().HasData(SeedService.GetStates());
+            //modelBuilder.Entity<City>().HasData(SeedService.Getcities());
+        }
+
+   
+
+}
 }

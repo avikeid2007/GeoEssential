@@ -10,9 +10,9 @@ namespace GeoEssential.Migrations
                 name: "Cities",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false),
+                    Id = table.Column<string>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    stateId = table.Column<int>(nullable: false)
+                    stateId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -23,7 +23,7 @@ namespace GeoEssential.Migrations
                 name: "Countries",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false),
+                    Id = table.Column<string>(nullable: false),
                     SortName = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     PhoneCode = table.Column<int>(nullable: false)
@@ -37,9 +37,9 @@ namespace GeoEssential.Migrations
                 name: "States",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false),
+                    Id = table.Column<string>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    CountryId = table.Column<int>(nullable: false)
+                    CountryId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

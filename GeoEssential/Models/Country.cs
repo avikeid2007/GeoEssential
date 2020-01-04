@@ -1,22 +1,17 @@
-﻿namespace GeoEssential.Models
+﻿using Newtonsoft.Json;
+
+namespace GeoEssential.Models
 {
     public class Country
     {
-        public int Id { get; set; }
+        [JsonProperty("id")]
+        public string Id { get; set; }
+      
+        [JsonProperty("sortname")]
         public string SortName { get; set; }
+        [JsonProperty("name")]
         public string Name { get; set; }
+        [JsonProperty("phonecode")]
         public int PhoneCode { get; set; }
-    }
-    public class State
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int CountryId { get; set; }
-    }
-    public class City
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int stateId { get; set; }
     }
 }
