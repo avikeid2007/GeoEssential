@@ -1,36 +1,38 @@
-﻿using GeoEssential.Models;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SQLite;
-using System.Linq;
+using System.IO;
 namespace GeoEssential.Db
 {
     public class GeoEssential : Core
     {
-        public IEnumerable<Country> GetCountries()
-        {
-            return GetData<Country>("SELECT * FROM Countries");
-        }
+        //public IEnumerable<Country> GetCountries()
+        //{
+        //    var result = GetData("SELECT * FROM Countries");
+        //}
     }
 
     public abstract class Core
     {
-        private string cs = @"URI=app.db";
+
         private DataTable dt;
-        protected IEnumerable<T> GetData<T>(string command)
+        protected DataTable GetData(string command)
         {
-            using (var con = new SQLiteConnection(cs))
+            if (File.Exists(@"\App_Data\app.db"))
             {
-                con.Open();
-                dt = new DataTable();
-                var Da = new SQLiteDataAdapter(command, con);
-                Da.Fill(dt);
-                if (dt != null && dt.Rows?.Count > 0)
+                using (var con = new SQLiteConnection("Data Source=App_Data/app.db;Version=3;New=False;Compress=True;"))
                 {
-                    return dt.DefaultView.AsQueryable().OfType<T>();
+                    con.Open();
+                    dt = new DataTable();
+                    var Da = new SQLiteDataAdapter(command, con);
+                    Da.Fill(dt);
+                    if (dt != null && dt.Rows?.Count > 0)
+                    {
+                        return dt;
+                    }
                 }
-                return null;
             }
+            return dt;
+
         }
 
     }

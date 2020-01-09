@@ -1,4 +1,4 @@
-﻿namespace GeoEssential.Db.Models
+﻿namespace GeoEssential.Webapi.Models
 {
     public class City
     {
