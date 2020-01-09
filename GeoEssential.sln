@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoEssential", "GeoEssential\GeoEssential.csproj", "{BAC545FC-26C8-4B4D-8BEC-A6A5EF4EDDE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoEssential", "GeoEssential\GeoEssential.csproj", "{BAC545FC-26C8-4B4D-8BEC-A6A5EF4EDDE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoEssential.Db", "GeoEssential.Db\GeoEssential.Db.csproj", "{4770E253-8486-45ED-B50D-9B9FA24D6FF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{BAC545FC-26C8-4B4D-8BEC-A6A5EF4EDDE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAC545FC-26C8-4B4D-8BEC-A6A5EF4EDDE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAC545FC-26C8-4B4D-8BEC-A6A5EF4EDDE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4770E253-8486-45ED-B50D-9B9FA24D6FF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4770E253-8486-45ED-B50D-9B9FA24D6FF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4770E253-8486-45ED-B50D-9B9FA24D6FF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4770E253-8486-45ED-B50D-9B9FA24D6FF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
