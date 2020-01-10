@@ -11,7 +11,17 @@ namespace GeoEssential.Webapi.Services
         public IEnumerable<Country> GetCountries()
         {
             var result = GetData("SELECT * FROM Countries");
-            return result.AsEnumerable().ToList().Select(x => new Country { Id = x.Field<string>("Id"), SortName = x.Field<string>("SortName"), Name = x.Field<string>("Name") });
+            return result.AsEnumerable().Select(x => new Country { Id = x.Field<string>("Id"), SortName = x.Field<string>("SortName"), Name = x.Field<string>("Name") }).OrderBy(x => x.Name);
+        }
+        public IEnumerable<State> GetStates(string countryId)
+        {
+            var result = GetData("SELECT * FROM States where CountryId=" + countryId.Trim());
+            return result.AsEnumerable().Select(x => new State { Id = x.Field<string>("Id"), Name = x.Field<string>("Name"), CountryId = string.Empty }).OrderBy(x => x.Name);
+        }
+        public IEnumerable<City> GetCities(string stateId)
+        {
+            var result = GetData("SELECT * FROM Cities where stateId=" + stateId.Trim());
+            return result.AsEnumerable().Select(x => new City { Id = x.Field<string>("Id"), Name = x.Field<string>("Name"), stateId = string.Empty }).OrderBy(x => x.Name);
         }
 
         protected DataTable GetData(string command)
