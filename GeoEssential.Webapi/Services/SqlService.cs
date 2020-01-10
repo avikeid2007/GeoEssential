@@ -20,7 +20,8 @@ namespace GeoEssential.Webapi.Services
             var path = HttpContext.Current.Server.MapPath(@"~/App_Data/app.db");
             if (System.IO.File.Exists(path))
             {
-                using (var con = new SQLiteConnection($"Data Source={path};Version=3;New=False;Compress=True;"))
+                var cs = string.Format("Data Source={0};Version=3;New=False;Compress=True;", path);
+                using (var con = new SQLiteConnection(cs))
                 {
                     con.Open();
                     dt = new DataTable();
