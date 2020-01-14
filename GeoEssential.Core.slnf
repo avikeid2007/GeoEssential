@@ -1,0 +1,8 @@
+{
+  "solution": {
+    "path": "GeoEssential.sln",
+    "projects": [
+      "GeoEssential\\GeoEssential.csproj"
+    ]
+  }
+}
